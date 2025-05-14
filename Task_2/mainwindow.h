@@ -2,8 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "iterator.cpp"
-#include "queue.h"
+#include <QTreeWidget>
+#include "binarytree.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -20,5 +20,8 @@ class MainWindow : public QMainWindow {
 
    private:
     Ui::MainWindow* ui;
+
+    void AddNodeToWidget(Node* node, QTreeWidgetItem *parentItem);
+    void AddTree(const BinaryTree& bst);
 };
 #endif	// MAINWINDOW_H

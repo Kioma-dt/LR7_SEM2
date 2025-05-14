@@ -24,6 +24,8 @@ class Queue {
 
     size_t size() const { return container_.size(); }
 
+    void clear() { container_.clear(); }
+
     void push(const T& value) { container_.push_back(value); }
 
     void pop() {

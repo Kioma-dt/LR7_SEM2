@@ -38,14 +38,14 @@ Node* BinaryTree::remove(Node* node, int key) {
 
 
         if (node->left == nullptr) {
-            Node* temp = node->left;
+            Node* temp = node->right;
             delete node->left;
             return temp;
         }
 
 
         else if (node->right == nullptr) {
-            Node* temp = node->right;
+            Node* temp = node->left;
             delete node->right;
             return temp;
         }
@@ -88,7 +88,7 @@ Node* BinaryTree::findMax(Node* node) {
 
 
     while (node->right != nullptr) {
-        return findMin(node->right);
+        return findMax(node->right);
     }
 
     return node;
@@ -247,4 +247,16 @@ QString BinaryTree::printInOrder() {
 
 void BinaryTree::balance() {
     root = balanceBst(root);
+}
+
+void BinaryTree::changeMinAndMax() {
+
+
+    if (root != nullptr) {
+        Node* min = findMin(root);
+        Node* max = findMax(root);
+        QString temp = min->value;
+        min->value = max->value;
+        max->value = temp;
+    }
 }

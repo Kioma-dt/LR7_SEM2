@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QMessageBox>
 #include <QTreeWidget>
 #include "binarytree.h"
 
@@ -20,8 +21,17 @@ class MainWindow : public QMainWindow {
 
    private:
     Ui::MainWindow* ui;
+    BinaryTree* BST;
 
-    void AddNodeToWidget(Node* node, QTreeWidgetItem *parentItem);
-    void AddTree(const BinaryTree& bst);
+    void PrintTreeToText();
+    void AddNodeToWidget(Node* node, QTreeWidgetItem* parentItem);
+    void ShowTree();
+
+   private slots:
+    void AddNodeSlot();
+    void RemoveNodeSlot();
+    void FindSlot();
+    void BalanceSlot();
+    void ChangeMinAndMaxSlot();
 };
 #endif	// MAINWINDOW_H

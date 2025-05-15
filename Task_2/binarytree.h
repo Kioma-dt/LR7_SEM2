@@ -46,6 +46,7 @@ class BinaryTree {
     QString printPostOrder();
     QString printInOrder();
     void balance();
+    void changeMinAndMax();
 };
 
 #endif	// BINARYTREE_H

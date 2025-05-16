@@ -108,6 +108,12 @@ class HashTableOA {
 
         return false;
     }
+
+    size_t size() const { return size_; }
+
+    size_t capacity() const { return capacity_; }
+
+    bool empty() { return size_ == 0; }
 };
 
 #endif	// HASHTABLEOA_H

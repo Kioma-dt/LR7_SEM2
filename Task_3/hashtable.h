@@ -19,7 +19,7 @@ class HashTable {
     size_t capacity_;
     size_t size_;
     Vector<Stack<Pair<Key, Value>>> table_;
-    size_t hashKey(const T& key) const { return hash<Key>(key) % capacity_; }
+    size_t hashKey(const Key& key) const { return hash<Key>(key) % capacity_; }
 
     void reHash(size_t new_capcity) {
         Vector<Stack<Pair<Key, Value>>> new_table(new_capcity);
